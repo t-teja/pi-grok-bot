@@ -1,0 +1,21 @@
+# Core (Pi 4/5 + DEV_MODE Linux)
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+httpx==0.28.1
+openai==1.82.0
+PyYAML==6.0.2
+python-dotenv==1.1.0
+pydantic==2.11.4
+websockets==15.0.1
+python-multipart==0.0.20
+
+# Local STT (Vosk is lightweight enough for Pi 4)
+vosk==0.3.45
+sounddevice==0.5.1
+numpy==2.2.6
+
+# Local TTS (Piper runs in real time on Pi 4/5 CPU)
+piper-tts==1.3.0
+
+# Optional screenshot helper; tools fall back to scrot/grim/import
+mss==10.0.0

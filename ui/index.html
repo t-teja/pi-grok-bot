@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07080d" />
+  <title>Grok Bot</title>
+  <link rel="icon" href="/static/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body data-state="idle">
+  <div class="bg">
+    <div class="bg-glow" id="bgGlow"></div>
+    <div class="stars"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <div>
+        <div class="brand-name">Grok Bot</div>
+        <div class="brand-sub">unofficial Pi companion</div>
+      </div>
+    </div>
+    <div class="clock" id="clock">--:--</div>
+    <div class="chips">
+      <span class="chip" id="stateChip">idle</span>
+      <span class="chip dim" id="modelChip">grok</span>
+    </div>
+  </header>
+
+  <main class="stage">
+    <button class="orb-wrap" id="orbBtn" type="button" aria-label="Tap to talk">
+      <div class="ring ring-3"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-1"></div>
+      <svg class="face" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <radialGradient id="core" cx="38%" cy="32%" r="70%">
+            <stop offset="0%" stop-color="#f4fbff" />
+            <stop offset="35%" stop-color="#7ee8ff" />
+            <stop offset="70%" stop-color="#3d7dff" />
+            <stop offset="100%" stop-color="#1a1448" />
+          </radialGradient>
+        </defs>
+        <circle class="core" cx="100" cy="100" r="62" fill="url(#core)" />
+        <g class="eyes">
+          <ellipse class="eye left" cx="78" cy="92" rx="8" ry="10" />
+          <ellipse class="eye right" cx="122" cy="92" rx="8" ry="10" />
+        </g>
+        <path class="mouth" d="M78 124 Q100 138 122 124" />
+      </svg>
+      <div class="hint" id="orbHint">tap to talk</div>
+    </button>
+
+    <section class="panel">
+      <div class="transcript" id="transcript" aria-live="polite">
+        <p class="you" id="youLine" hidden></p>
+        <p class="bot" id="botLine">Hey Teja. Tap the orb or type below.</p>
+      </div>
+      <div class="tool-line" id="toolLine" hidden></div>
+    </section>
+  </main>
+
+  <form class="composer" id="composer" autocomplete="off">
+    <input id="textIn" type="text" maxlength="4000" placeholder="Type if the mic is asleep…" />
+    <button type="submit" id="sendBtn">Send</button>
+  </form>
+
+  <div class="toast" id="toast" hidden></div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
