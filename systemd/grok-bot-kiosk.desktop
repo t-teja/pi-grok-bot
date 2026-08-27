@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Grok Bot Kiosk
+Comment=Fullscreen unofficial Pi Grok Bot UI
+Exec=/home/REPLACE_USER/pi-grok-bot/scripts/kiosk.sh
+X-GNOME-Autostart-enabled=true
+Terminal=false

@@ -1,0 +1,17 @@
+[Unit]
+Description=Unofficial Raspberry Pi Grok Bot kiosk backend
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/pi-grok-bot
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=-%h/pi-grok-bot/.env
+ExecStart=%h/pi-grok-bot/venv/bin/python -m app
+Restart=on-failure
+RestartSec=3
+
+# Never run this unit as root. install.sh enables it as a user service.
+[Install]
+WantedBy=default.target
