@@ -1,0 +1,39 @@
+# Secrets and local config
+.env
+config.yaml
+*.pem
+*.key
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Models (downloaded by install.sh)
+models/*
+!models/.gitkeep
+*.onnx
+vosk-model*/
+
+# Runtime data
+data/screenshots/*
+!data/screenshots/.gitkeep
+data/*.wav
+data/*.log
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+*~
